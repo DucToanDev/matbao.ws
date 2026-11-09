@@ -1,0 +1,1310 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATBAO WS - Website của người hùng thương hiệu thời đại số</title>
+
+  <!-- External Main Stylesheet with Root Variables & Custom Fonts -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap&subset=vietnamese">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['var(--font-primary)', 'system-ui', 'sans-serif'],
+            primary: ['var(--font-primary)', 'system-ui', 'sans-serif'],
+            secondary: ['var(--font-secondary)', 'sans-serif'],
+          },
+          keyframes: {
+            'hx-shine': { '0%': { transform: 'translateX(-100%)' }, '45%, 100%': { transform: 'translateX(100%)' } },
+            'hx-pulse': { '0%': { transform: 'scale(.9)', opacity: '1' }, '100%': { transform: 'scale(1.35)', opacity: '0' } },
+            'hx-spark': { '0%, 100%': { transform: 'scale(1) rotate(0)', opacity: '1' }, '50%': { transform: 'scale(.7) rotate(45deg)', opacity: '.6' } },
+          },
+          animation: {
+            'hx-shine': 'hx-shine 3.6s ease-in-out 1.6s infinite',
+            'hx-pulse': 'hx-pulse 2.2s ease-out infinite',
+            'hx-spark': 'hx-spark 3s ease-in-out infinite',
+          },
+          colors: {
+            matbao: {
+              red: 'var(--color-brand-red)',
+              orange: 'var(--color-brand-orange)',
+              blue: 'var(--color-brand-blue)',
+              navy: 'var(--color-brand-navy)',
+              green: 'var(--color-brand-green)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="bg-white text-slate-800 font-sans antialiased min-h-screen relative overflow-x-hidden pb-[68px] lg:pb-0 selection:bg-[#ffe0d2] selection:text-[#c4181c]">
+
+  <!-- ================= TOP HEADER NAVIGATION ================= -->
+  <header class="bg-white border-b border-slate-100 sticky top-0 z-50 h-[80px] flex items-center">
+    <div
+      class="max-w-[1240px] xl:max-w-[1320px] w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+
+      <!-- MATBAO WS Logo -->
+      <a href="#" class="flex items-center group py-2">
+        <img src="assets/images/logo.png" alt="MATBAO WS"
+          class="h-9 sm:h-11 lg:h-10 xl:h-11 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <!-- Desktop Navigation (mega menu content lives in assets/js/mega-menu.js) -->
+      <nav aria-label="Menu chính"
+        class="hidden lg:flex self-stretch items-stretch whitespace-nowrap gap-4 xl:gap-8 text-[13.5px] xl:text-[14.5px] font-semibold text-slate-700">
+        <button type="button" data-mega="0" aria-expanded="false" aria-controls="megaMenu"
+          class="relative flex items-center gap-1.5 h-full hover:text-[#e32227] transition-colors [&.is-active]:text-stone-900 after:absolute after:inset-x-0 after:bottom-0 after:h-[2.5px] after:rounded-full after:bg-stone-900 after:scale-x-0 after:transition-transform after:duration-300 [&.is-active]:after:scale-x-100">
+          <span>Thiết kế Website</span>
+          <svg class="w-3 h-3 text-slate-400 transition-transform duration-300 [.is-active>&]:rotate-180 [.is-active>&]:text-stone-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <button type="button" data-mega="1" aria-expanded="false" aria-controls="megaMenu"
+          class="relative flex items-center gap-1.5 h-full hover:text-[#e32227] transition-colors [&.is-active]:text-stone-900 after:absolute after:inset-x-0 after:bottom-0 after:h-[2.5px] after:rounded-full after:bg-stone-900 after:scale-x-0 after:transition-transform after:duration-300 [&.is-active]:after:scale-x-100">
+          <span>Mẫu Website</span>
+          <svg class="w-3 h-3 text-slate-400 transition-transform duration-300 [.is-active>&]:rotate-180 [.is-active>&]:text-stone-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <button type="button" data-mega="2" aria-expanded="false" aria-controls="megaMenu"
+          class="relative flex items-center gap-1.5 h-full hover:text-[#e32227] transition-colors [&.is-active]:text-stone-900 after:absolute after:inset-x-0 after:bottom-0 after:h-[2.5px] after:rounded-full after:bg-stone-900 after:scale-x-0 after:transition-transform after:duration-300 [&.is-active]:after:scale-x-100">
+          <span>Chăm sóc Website</span>
+          <svg class="w-3 h-3 text-slate-400 transition-transform duration-300 [.is-active>&]:rotate-180 [.is-active>&]:text-stone-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <button type="button" data-mega="3" aria-expanded="false" aria-controls="megaMenu"
+          class="relative flex items-center gap-1.5 h-full hover:text-[#e32227] transition-colors [&.is-active]:text-stone-900 after:absolute after:inset-x-0 after:bottom-0 after:h-[2.5px] after:rounded-full after:bg-stone-900 after:scale-x-0 after:transition-transform after:duration-300 [&.is-active]:after:scale-x-100">
+          <span>Audit Website</span>
+          <svg class="w-3 h-3 text-slate-400 transition-transform duration-300 [.is-active>&]:rotate-180 [.is-active>&]:text-stone-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <a href="#about" class="flex h-full items-center hover:text-[#e32227] transition-colors">Về Mắt Bão WS</a>
+      </nav>
+
+      <!-- Right Login Link -->
+      <div class="hidden lg:flex items-center">
+        <button onclick="openLoginModal()"
+          class="flex items-center gap-1.5 whitespace-nowrap text-[13.5px] xl:text-[14px] font-bold text-slate-800 hover:text-[#e32227] px-4 xl:px-5 py-2.5 rounded-full hover:bg-slate-50 border border-slate-200 transition-all shadow-sm">
+          <span>Đăng nhập</span>
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuToggle" aria-controls="mobileMenu" aria-expanded="false"
+        class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+
+
+    <!-- ================= MEGA MENU PANEL (desktop) ================= -->
+    <div id="megaMenu"
+      class="hidden lg:block absolute inset-x-0 top-full z-40 border-t border-slate-100 bg-gradient-to-b from-[#eef3fb] via-[#f7f3f6] to-[#fdeee3] shadow-[0_24px_40px_-24px_rgba(15,23,42,.25)] invisible opacity-0 -translate-y-2 pointer-events-none transition-all duration-200 [&.is-open]:visible [&.is-open]:opacity-100 [&.is-open]:translate-y-0 [&.is-open]:pointer-events-auto">
+      <div class="max-w-[1240px] xl:max-w-[1320px] mx-auto px-8 flex min-h-[300px] max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain">
+        <ul data-mega-cats class="w-[250px] xl:w-[300px] shrink-0 py-8 pr-6 xl:pr-8 space-y-1 border-r border-slate-200/80"></ul>
+        <div data-mega-cols class="flex-1 min-w-0 flex gap-8 xl:gap-16 py-8 pl-8 xl:pl-12"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE SIDEBAR MENU (< lg) ================= -->
+  <div id="mobileMenu" class="lg:hidden" aria-hidden="true">
+    <div data-menu-close class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 [#mobileMenu.is-open_&]:opacity-100 [#mobileMenu.is-open_&]:pointer-events-auto"></div>
+    <nav aria-label="Menu chính"
+      class="fixed inset-y-0 right-0 z-[61] flex flex-col w-[86%] max-w-[360px] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out [#mobileMenu.is-open_&]:translate-x-0">
+      <div class="flex items-center justify-between h-[72px] px-5 border-b border-slate-100 shrink-0">
+        <img src="assets/images/logo.png" alt="MATBAO WS" class="h-9 w-auto object-contain">
+        <button type="button" data-menu-close aria-label="Đóng menu"
+          class="grid place-items-center w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto overscroll-contain px-5">
+          <details class="group border-b border-slate-100">
+            <summary class="flex items-center justify-between py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[15px] font-semibold text-slate-800 group-open:text-[#e32227]">
+              Thiết kế Website<svg class="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-3 -mt-1 space-y-0.5">
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thiết kế Web Doanh nghiệp</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thiết kế Web Bán hàng</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thiết kế Web Landing Page</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thiết kế Web Theo yêu cầu</a>
+            </div>
+          </details>
+          <details class="group border-b border-slate-100">
+            <summary class="flex items-center justify-between py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[15px] font-semibold text-slate-800 group-open:text-[#e32227]">
+              Mẫu Website<svg class="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-3 -mt-1 space-y-0.5">
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Bất động sản &amp; Dự án</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Xây dựng &amp; Nội thất</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thương mại &amp; Bán lẻ</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Thời trang &amp; Phụ kiện</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Y tế, Dược &amp; Thẩm mỹ Spa</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Nhà hàng, Cafe &amp; F&amp;B</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Du lịch, Resort &amp; Khách sạn</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Giáo dục &amp; Trung tâm Đào tạo</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Sản xuất &amp; Cơ khí Công nghiệp</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Công nghệ, IT &amp; Phần mềm</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Vận tải &amp; Logistics Quốc tế</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Tài chính, Luật &amp; Doanh nghiệp</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Ô tô, Xe máy &amp; Showroom</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Truyền thông, Quảng cáo &amp; Sự kiện</a>
+            </div>
+          </details>
+          <details class="group border-b border-slate-100">
+            <summary class="flex items-center justify-between py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[15px] font-semibold text-slate-800 group-open:text-[#e32227]">
+              Chăm sóc Website<svg class="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-3 -mt-1 space-y-0.5">
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Quản trị & Cập nhật nội dung</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Bảo trì & Tối ưu tốc độ Web</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Bảo mật & Phòng chống mã độc</a>
+            </div>
+          </details>
+          <details class="group border-b border-slate-100">
+            <summary class="flex items-center justify-between py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[15px] font-semibold text-slate-800 group-open:text-[#e32227]">
+              Audit Website<svg class="w-4 h-4 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-3 -mt-1 space-y-0.5">
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Đo lường hiệu suất SEO</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Kiểm tra trải nghiệm người dùng (UX)</a>
+              <a href="#" class="block px-3 py-2 rounded-lg text-[13.5px] text-slate-600 hover:bg-[#fff1ec] hover:text-[#e32227]">Audit an toàn bảo mật SSL</a>
+            </div>
+          </details>
+          <a href="#about" data-menu-close class="block border-b border-slate-100 py-3.5 text-[15px] font-semibold text-slate-800 hover:text-[#e32227]">Về Mắt Bão WS</a>
+      </div>
+      <div class="shrink-0 p-5 space-y-3 border-t border-slate-100 bg-slate-50/60 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
+        <button type="button" onclick="closeMobileMenu();openLoginModal()"
+          class="w-full h-12 rounded-full bg-gradient-to-r from-[#e32227] to-[#ee6624] text-white text-[15px] font-bold shadow-[0_10px_24px_-10px_rgba(227,34,39,.6)]">Đăng nhập</button>
+        <a href="tel:19001830" class="flex items-center justify-center gap-2 h-12 rounded-full border border-slate-200 bg-white text-[15px] font-bold text-slate-800">
+          <svg class="w-4 h-4 text-[#10b981]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Hotline 1900 1830
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section
+    class="hero-container relative pt-8 sm:pt-12 pb-20 sm:pb-24 lg:pb-32 flex items-center min-h-[576px] lg:min-h-[620px] overflow-hidden">
+    <!-- Bottom fade: blends the hero background into the page background -->
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 lg:h-56 bg-gradient-to-b from-white/0 via-white/70 to-white" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-[1240px] xl:max-w-[1320px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+        <!-- Left Column: Title, Subtitle, Highlights -->
+        <div id="heroCopy" class="lg:col-span-6 z-10 flex flex-col items-start gap-[22px] md:gap-7 py-2">
+
+          <!-- Eyebrow -->
+          <p data-hx-eyebrow class="-mb-1.5 inline-flex items-center gap-3 text-md font-bold text-matbao-red">
+            <span class="w-9 h-0.5 rounded-sm bg-gradient-to-r from-matbao-red to-matbao-orange" aria-hidden="true"></span>
+            <span>Giải pháp Website toàn diện</span>
+            <svg class="w-[13px] h-[13px] text-matbao-orange animate-hx-spark motion-reduce:animate-none" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z" fill="currentColor"/></svg>
+          </p>
+
+          <!-- Main Title -->
+          <h1 class="m-0 text-[clamp(30px,3.35vw,48px)] leading-[1.12] font-bold tracking-[-.035em] text-stone-900">
+            <span class="block overflow-hidden pt-[.04em] pb-[.42em] -mb-[.38em]"><span data-hx-line class="inline-block">Website của người hùng</span></span>
+            <span class="block overflow-hidden pt-[.04em] pb-[.42em] -mb-[.38em]"><span data-hx-line class="inline-block pr-[.12em] pb-[.18em] -mb-[.18em] bg-gradient-to-r from-[#e32227] via-[#ee6624] to-[#f59e0b] bg-clip-text text-transparent">thương hiệu
+              <span class="relative inline-block pb-[.18em] -mb-[.18em]">thời đại số<svg data-hx-underline class="absolute -left-[2%] -bottom-[.3em] w-[104%] h-[.36em] overflow-visible" viewBox="0 0 220 18" fill="none" aria-hidden="true"><path d="M3 13C52 4 150 2 217 9" stroke="url(#hxGrad)" stroke-width="5" stroke-linecap="round"/><defs><linearGradient id="hxGrad" x1="0" x2="1"><stop offset="0" stop-color="#e32227"/><stop offset="1" stop-color="#ee6624"/></linearGradient></defs></svg></span></span></span>
+          </h1>
+
+          <!-- Process strip (active step is toggled by hero-copy.js) -->
+          <ol data-hx-steps aria-label="Quy trình" class="mt-1.5 grid grid-cols-2 w-full sm:w-auto sm:flex sm:flex-wrap gap-1.5 list-none p-0">
+            <li class="group relative inline-flex items-center gap-[7px] py-1.5 pl-1.5 pr-3 rounded-full bg-white/70 border border-white/90 text-[12.5px] font-bold text-stone-600 transition-all duration-[400ms] [&.is-active]:bg-white [&.is-active]:text-stone-900 [&.is-active]:-translate-y-px [&.is-active]:shadow-[0_8px_18px_-8px_rgba(227,34,39,.45)] max-sm:after:hidden after:content-[''] after:absolute after:-right-1.5 after:top-1/2 after:w-1.5 after:h-[1.5px] after:bg-[#fdba9a]"><b class="grid place-items-center w-[22px] h-[22px] rounded-full bg-[#fff1ec] text-matbao-red font-secondary text-[10px] transition-colors duration-[400ms] group-[.is-active]:bg-gradient-to-br group-[.is-active]:from-matbao-red group-[.is-active]:to-matbao-orange group-[.is-active]:text-white">01</b>Thiết kế</li>
+            <li class="group relative inline-flex items-center gap-[7px] py-1.5 pl-1.5 pr-3 rounded-full bg-white/70 border border-white/90 text-[12.5px] font-bold text-stone-600 transition-all duration-[400ms] [&.is-active]:bg-white [&.is-active]:text-stone-900 [&.is-active]:-translate-y-px [&.is-active]:shadow-[0_8px_18px_-8px_rgba(227,34,39,.45)] max-sm:after:hidden after:content-[''] after:absolute after:-right-1.5 after:top-1/2 after:w-1.5 after:h-[1.5px] after:bg-[#fdba9a]"><b class="grid place-items-center w-[22px] h-[22px] rounded-full bg-[#fff1ec] text-matbao-red font-secondary text-[10px] transition-colors duration-[400ms] group-[.is-active]:bg-gradient-to-br group-[.is-active]:from-matbao-red group-[.is-active]:to-matbao-orange group-[.is-active]:text-white">02</b>Triển khai</li>
+            <li class="group relative inline-flex items-center gap-[7px] py-1.5 pl-1.5 pr-3 rounded-full bg-white/70 border border-white/90 text-[12.5px] font-bold text-stone-600 transition-all duration-[400ms] [&.is-active]:bg-white [&.is-active]:text-stone-900 [&.is-active]:-translate-y-px [&.is-active]:shadow-[0_8px_18px_-8px_rgba(227,34,39,.45)] max-sm:after:hidden after:content-[''] after:absolute after:-right-1.5 after:top-1/2 after:w-1.5 after:h-[1.5px] after:bg-[#fdba9a]"><b class="grid place-items-center w-[22px] h-[22px] rounded-full bg-[#fff1ec] text-matbao-red font-secondary text-[10px] transition-colors duration-[400ms] group-[.is-active]:bg-gradient-to-br group-[.is-active]:from-matbao-red group-[.is-active]:to-matbao-orange group-[.is-active]:text-white">03</b>Vận hành</li>
+            <li class="group relative inline-flex items-center gap-[7px] py-1.5 pl-1.5 pr-3 rounded-full bg-white/70 border border-white/90 text-[12.5px] font-bold text-stone-600 transition-all duration-[400ms] [&.is-active]:bg-white [&.is-active]:text-stone-900 [&.is-active]:-translate-y-px [&.is-active]:shadow-[0_8px_18px_-8px_rgba(227,34,39,.45)]"><b class="grid place-items-center w-[22px] h-[22px] rounded-full bg-[#fff1ec] text-matbao-red font-secondary text-[10px] transition-colors duration-[400ms] group-[.is-active]:bg-gradient-to-br group-[.is-active]:from-matbao-red group-[.is-active]:to-matbao-orange group-[.is-active]:text-white">04</b>Tối ưu</li>
+          </ol>
+
+          <!-- Description -->
+          <p data-hx-fade class="max-w-[500px] m-0 font-secondary text-[15px] leading-[1.65] text-stone-600 [&_strong]:font-semibold [&_strong]:text-stone-900">
+            Giúp doanh nghiệp <strong>tăng nhận diện</strong>, <strong>thu hút khách hàng</strong> và
+            <strong>bứt phá doanh số</strong> với một website được đo ni đóng giày cho thương hiệu <span class="whitespace-nowrap">của bạn.</span>
+          </p>
+
+          <!-- CTAs -->
+          <div data-hx-fade class="flex flex-wrap items-center gap-3 max-sm:w-full">
+            <button type="button" onclick="openConsultModal()"
+              class="group relative overflow-hidden inline-flex items-center gap-3 h-[50px] pl-[22px] pr-1.5 rounded-full bg-gradient-to-r from-matbao-red to-matbao-orange text-white text-[14.5px] font-bold shadow-[0_14px_28px_-10px_rgba(227,34,39,.65)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_32px_-10px_rgba(227,34,39,.7)] max-sm:w-full max-sm:justify-between before:content-[''] before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,.35)_50%,transparent_70%)] before:animate-hx-shine motion-reduce:before:animate-none">
+              <span>Nhận tư vấn miễn phí</span>
+              <span class="grid place-items-center w-[38px] h-[38px] rounded-full bg-white text-matbao-red transition-transform duration-300 group-hover:-rotate-45" aria-hidden="true"><svg class="w-[17px] h-[17px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </button>
+            <button type="button" onclick="document.getElementById('searchInput').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>document.getElementById('searchInput').focus({preventScroll:true}),500)"
+              class="inline-flex items-center gap-2.5 h-[50px] pl-1.5 pr-5 rounded-full bg-white/75 backdrop-blur-md border border-white/95 text-stone-900 text-[14.5px] font-bold shadow-[0_8px_20px_-12px_rgba(28,25,23,.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white max-sm:w-full">
+              <span class="relative grid place-items-center w-[38px] h-[38px] rounded-full bg-stone-900 text-white after:content-[''] after:absolute after:-inset-1 after:rounded-full after:border-[1.5px] after:border-stone-900/25 after:animate-hx-pulse motion-reduce:after:animate-none" aria-hidden="true"><svg class="w-3.5 h-3.5 ml-0.5" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+              <span>Xem kho giao diện</span>
+            </button>
+          </div>
+
+          <!-- Feature bar -->
+          <div data-hx-fade class="mt-2 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-[repeat(3,auto)] w-full xl:w-auto py-1.5 px-1 md:py-3.5 md:px-2 rounded-[18px] bg-white/60 backdrop-blur-lg border border-white/90 shadow-[0_12px_30px_-16px_rgba(120,53,15,.3)]">
+            <div class="flex items-center gap-3 px-3 py-2.5 md:py-0.5 lg:max-xl:flex-col lg:max-xl:items-start lg:max-xl:gap-2 xl:px-[22px]">
+              <span class="shrink-0 grid place-items-center w-[34px] h-[34px] rounded-[11px] text-white bg-gradient-to-br from-matbao-red to-matbao-orange shadow-[0_6px_14px_-6px_rgba(227,34,39,.6)]"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></span>
+              <span class="whitespace-nowrap"><b class="block text-[13px] text-stone-900">Đúng ý</b><small class="block mt-0.5 font-secondary text-[11.5px] text-[#8a817c]">Thiết kế theo nhu cầu</small></span>
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2.5 md:py-0.5 lg:max-xl:flex-col lg:max-xl:items-start lg:max-xl:gap-2 xl:px-[22px] border-t md:border-t-0 md:border-l border-dashed border-[#f3c6b2]">
+              <span class="shrink-0 grid place-items-center w-[34px] h-[34px] rounded-[11px] text-white bg-gradient-to-br from-matbao-red to-matbao-orange shadow-[0_6px_14px_-6px_rgba(227,34,39,.6)]"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <span class="whitespace-nowrap"><b class="block text-[13px] text-stone-900">Đúng hẹn</b><small class="block mt-0.5 font-secondary text-[11.5px] text-[#8a817c]">Bàn giao đúng tiến độ</small></span>
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2.5 md:py-0.5 lg:max-xl:flex-col lg:max-xl:items-start lg:max-xl:gap-2 xl:px-[22px] border-t md:border-t-0 md:border-l border-dashed border-[#f3c6b2]">
+              <span class="shrink-0 grid place-items-center w-[34px] h-[34px] rounded-[11px] text-white bg-gradient-to-br from-matbao-red to-matbao-orange shadow-[0_6px_14px_-6px_rgba(227,34,39,.6)]"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <span class="whitespace-nowrap"><b class="block text-[13px] text-stone-900">Đồng hành</b><small class="block mt-0.5 font-secondary text-[11.5px] text-[#8a817c]">Hỗ trợ &amp; nâng cấp lâu dài</small></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Website trailer showcase (GSAP) -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end items-center relative z-10">
+          <div class="trailer" id="heroTrailer" role="region" aria-label="Trailer giới thiệu các mẫu website">
+            <div class="trailer-glow" aria-hidden="true"></div>
+
+            <div class="trailer-stage" aria-hidden="true">
+              <div class="trailer-rig">
+
+                <!-- Browser -->
+                <div class="trailer-browser">
+                  <div class="tr-bar">
+                    <span class="tr-dots"><i></i><i></i><i></i></span>
+                    <span class="tr-url"><span><em>https://</em>nova-spa.vn</span><span><em>https://</em>urban-studio.vn</span><span><em>https://</em>skyline-residences.vn</span><span><em>https://</em>bepmoc.vn</span></span>
+                    <span class="tr-live"><i></i>LIVE</span>
+                  </div>
+                  <div class="trailer-screen">
+
+                    <!-- Scene 1: Spa -->
+                    <div class="tr-scene tr-spa" data-cursor="17,71">
+                      <div class="tr-page">
+                        <nav class="tr-nav"><b class="tr-logo">nōva<span>.</span></b><ul><li>Trang chủ</li><li>Sản phẩm</li><li>Liệu trình</li></ul><span class="tr-pill">Giỏ hàng · 2</span></nav>
+                        <section class="tr-hero">
+                          <div class="tr-copy">
+                            <small class="tr-kicker">BỘ SƯU TẬP 2026</small>
+                            <h4 class="tr-h"><span class="tr-line"><span>Rạng rỡ</span></span><span class="tr-line"><span><em>tự nhiên.</em></span></span></h4>
+                            <p>Mỹ phẩm thuần chay chiết xuất từ thảo mộc Việt.</p>
+                            <span class="tr-btn">MUA NGAY ↗</span>
+                          </div>
+                          <div class="tr-visual">
+                            <div class="spa-sun" data-pop></div>
+                            <div class="spa-bottle b1" data-rise></div>
+                            <div class="spa-bottle b2" data-rise><b>NŌVA</b></div>
+                            <div class="spa-bottle b3" data-rise></div>
+                            <span class="spa-cap">A LITTLE<br>EVERYDAY LUXURY</span>
+                          </div>
+                        </section>
+                        <section class="tr-grid">
+                          <h5>Bán chạy nhất</h5>
+                          <div class="tr-card"><i></i><b>Serum Vitamin C</b><span>450.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Toner Hoa Hồng</b><span>320.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Kem Dưỡng Đêm</b><span>590.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Mặt Nạ Nghệ</b><span>210.000đ</span></div>
+                        </section>
+                      </div>
+                    </div>
+
+                    <!-- Scene 2: Fashion -->
+                    <div class="tr-scene tr-fashion" data-cursor="18,75">
+                      <div class="tr-page">
+                        <nav class="tr-nav"><b class="tr-logo">URBAN<span>/</span></b><ul><li>Nam</li><li>Nữ</li><li>Sale</li></ul><span class="tr-pill">Tìm kiếm</span></nav>
+                        <section class="tr-hero">
+                          <div class="tr-copy">
+                            <small class="tr-kicker">FALL / WINTER 26</small>
+                            <h4 class="tr-h"><span class="tr-line"><span>New</span></span><span class="tr-line"><span><em>Season.</em></span></span></h4>
+                            <p>Phong cách đường phố, chất liệu bền vững.</p>
+                            <span class="tr-btn">KHÁM PHÁ ↗</span>
+                          </div>
+                          <div class="tr-visual">
+                            <div class="fx-arch a1" data-rise></div>
+                            <div class="fx-arch a2" data-rise></div>
+                            <div class="fx-arch a3" data-rise></div>
+                            <span class="fx-sale" data-pop>-30%</span>
+                          </div>
+                        </section>
+                        <div class="fx-marquee"><div class="fx-track"><span>NEW SEASON ✦ FREE SHIP ✦ ĐỔI TRẢ 30 NGÀY ✦ NEW SEASON ✦ FREE SHIP ✦ ĐỔI TRẢ 30 NGÀY ✦&nbsp;</span><span>NEW SEASON ✦ FREE SHIP ✦ ĐỔI TRẢ 30 NGÀY ✦ NEW SEASON ✦ FREE SHIP ✦ ĐỔI TRẢ 30 NGÀY ✦&nbsp;</span></div></div>
+                        <section class="tr-grid">
+                          <h5>Hàng mới về</h5>
+                          <div class="tr-card"><i></i><b>Oversize Tee</b><span>390.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Cargo Pants</b><span>690.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Wool Jacket</b><span>1.290.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Canvas Bag</b><span>290.000đ</span></div>
+                        </section>
+                      </div>
+                    </div>
+
+                    <!-- Scene 3: Real estate -->
+                    <div class="tr-scene tr-estate" data-cursor="19,73">
+                      <div class="tr-page">
+                        <nav class="tr-nav"><b class="tr-logo">SKYLINE<span>.</span></b><ul><li>Dự án</li><li>Tiện ích</li><li>Liên hệ</li></ul><span class="tr-pill">Hotline 1900</span></nav>
+                        <section class="tr-hero">
+                          <div class="tr-copy">
+                            <small class="tr-kicker">RESIDENCES · THỦ ĐỨC</small>
+                            <h4 class="tr-h"><span class="tr-line"><span>Sống giữa</span></span><span class="tr-line"><span><em>tầng mây.</em></span></span></h4>
+                            <p>Căn hộ 2–3PN, view sông, bàn giao quý IV/2026.</p>
+                            <span class="tr-btn">XEM DỰ ÁN ↗</span>
+                          </div>
+                          <div class="tr-visual">
+                            <div class="es-moon" data-pop></div>
+                            <div class="es-city">
+                              <i data-rise style="height:46%"></i><i data-rise style="height:72%"></i><i data-rise style="height:94%"></i><i data-rise style="height:60%"></i><i data-rise style="height:80%"></i><i data-rise style="height:40%"></i>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="tr-grid">
+                          <h5>Thông tin dự án</h5>
+                          <div class="tr-card es-stat"><b>1.250</b><span>căn hộ</span></div>
+                          <div class="tr-card es-stat"><b>68%</b><span>cây xanh</span></div>
+                          <div class="tr-card es-stat"><b>42</b><span>tầng</span></div>
+                          <div class="tr-card es-stat"><b>5'</b><span>tới Metro</span></div>
+                        </section>
+                      </div>
+                    </div>
+
+                    <!-- Scene 4: Restaurant -->
+                    <div class="tr-scene tr-food" data-cursor="17,73">
+                      <div class="tr-page">
+                        <nav class="tr-nav"><b class="tr-logo">Bếp Mộc<span>.</span></b><ul><li>Thực đơn</li><li>Không gian</li><li>Ưu đãi</li></ul><span class="tr-pill">Đặt bàn</span></nav>
+                        <section class="tr-hero">
+                          <div class="tr-copy">
+                            <small class="tr-kicker">ẨM THỰC VIỆT · SINCE 2012</small>
+                            <h4 class="tr-h"><span class="tr-line"><span>Hương vị</span></span><span class="tr-line"><span><em>quê nhà.</em></span></span></h4>
+                            <p>Món ngon ba miền, nấu chậm từ nguyên liệu sạch.</p>
+                            <span class="tr-btn">ĐẶT BÀN NGAY ↗</span>
+                          </div>
+                          <div class="tr-visual">
+                            <div class="fd-plate" data-pop><i></i></div>
+                            <span class="fd-leaf l1" data-pop></span><span class="fd-leaf l2" data-pop></span>
+                            <span class="fd-tag" data-pop>★ 4.9 · 2k đánh giá</span>
+                          </div>
+                        </section>
+                        <section class="tr-grid">
+                          <h5>Món đặc biệt</h5>
+                          <div class="tr-card"><i></i><b>Bún chả Hà Nội</b><span>85.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Cá kho tộ</b><span>129.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Gỏi cuốn tôm</b><span>69.000đ</span></div>
+                          <div class="tr-card"><i></i><b>Chè khúc bạch</b><span>45.000đ</span></div>
+                        </section>
+                      </div>
+                    </div>
+
+                    <!-- Trailer title-card overlay -->
+                    <div class="tr-overlay">
+                      <span class="tr-corner c1"></span><span class="tr-corner c2"></span><span class="tr-corner c3"></span><span class="tr-corner c4"></span>
+                      <span class="tr-rec"><i></i>REC · MATBAO WS</span>
+                      <div class="tr-title"><small>CẢNH 01 — MẪU WEBSITE</small><strong>Mỹ phẩm <em>&amp;</em> Spa</strong></div>
+                      <div class="tr-title"><small>CẢNH 02 — MẪU WEBSITE</small><strong>Thời trang</strong></div>
+                      <div class="tr-title"><small>CẢNH 03 — MẪU WEBSITE</small><strong>Bất động sản</strong></div>
+                      <div class="tr-title"><small>CẢNH 04 — MẪU WEBSITE</small><strong>Nhà hàng <em>&amp;</em> Ẩm thực</strong></div>
+                      <span class="tr-presents">MATBAO WS PRESENTS</span>
+                    </div>
+
+                    <!-- Fake cursor -->
+                    <div class="tr-cursor"><span class="tr-ripple"></span><svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M5 3l14 7.5-6.2 1.6L10 18.5z" fill="#0b2d59" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="trailer-phone">
+                  <span class="tp-notch"></span>
+                  <div class="tp-scene tr-spa"><div class="tp-nav"><b>nōva<span>.</span></b><i>☰</i></div><div class="tp-art"><span></span></div><small>NEW COLLECTION</small><strong>Rạng rỡ <em>tự nhiên.</em></strong><span class="tp-btn">MUA NGAY</span></div>
+                  <div class="tp-scene tr-fashion"><div class="tp-nav"><b>URBAN<span>/</span></b><i>☰</i></div><div class="tp-art"><span></span></div><small>FW / 26</small><strong>New <em>Season.</em></strong><span class="tp-btn">KHÁM PHÁ</span></div>
+                  <div class="tp-scene tr-estate"><div class="tp-nav"><b>SKYLINE<span>.</span></b><i>☰</i></div><div class="tp-art"><span></span></div><small>RESIDENCES</small><strong>Sống giữa <em>tầng mây.</em></strong><span class="tp-btn">XEM DỰ ÁN</span></div>
+                  <div class="tp-scene tr-food"><div class="tp-nav"><b>Bếp Mộc<span>.</span></b><i>☰</i></div><div class="tp-art"><span></span></div><small>SINCE 2012</small><strong>Hương vị <em>quê nhà.</em></strong><span class="tp-btn">ĐẶT BÀN</span></div>
+                </div>
+
+                <!-- Floating metric chips -->
+                <div class="tr-chip tr-chip-speed">
+                  <span class="tr-gauge"><svg viewBox="0 0 36 36" class="tr-ring"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" class="tr-ring-val" /></svg><b class="tr-speed">0</b></span>
+                  <div><strong>Tốc độ tải</strong><small>PageSpeed Mobile</small></div>
+                </div>
+                <div class="tr-chip tr-chip-conv">
+                  <span class="tr-chip-icon">↗</span>
+                  <div><strong class="tr-conv">+0%</strong><small>Tỉ lệ chuyển đổi</small></div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Trailer controls -->
+            <div class="trailer-ctrl">
+              <div class="tr-chaps">
+                <button type="button" class="tr-chap" aria-label="Xem mẫu Mỹ phẩm & Spa"><span>Spa</span><em><i></i></em></button>
+                <button type="button" class="tr-chap" aria-label="Xem mẫu Thời trang"><span>Thời trang</span><em><i></i></em></button>
+                <button type="button" class="tr-chap" aria-label="Xem mẫu Bất động sản"><span>BĐS</span><em><i></i></em></button>
+                <button type="button" class="tr-chap" aria-label="Xem mẫu Nhà hàng"><span>Nhà hàng</span><em><i></i></em></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SEARCH & INTERACTIVE DASHBOARD CONTAINER ================= -->
+  <div
+    class="relative -mt-8 sm:-mt-10 md:-mt-14 z-30 max-w-[1240px] xl:max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+
+    <!-- White Card Container -->
+    <div
+      class="bg-white rounded-2xl md:rounded-3xl shadow-[0_12px_40px_rgba(11,45,89,0.07)] border border-slate-100 p-3.5 sm:p-4 lg:p-5 relative">
+
+      <!-- ================= BỘ LỌC TÌM KIẾM MẪU WEBSITE ================= -->
+      <div class="space-y-3 pb-3 border-b border-slate-100/90">
+
+        <!-- Row 1: Search Bar Row -->
+        <div class="flex flex-col md:flex-row items-stretch md:items-center gap-2 sm:gap-2.5">
+
+          <!-- Left Button: Tìm mẫu website phù hợp -->
+          <button
+            class="shrink-0 bg-gradient-to-r from-[#e32227] to-[#ee6624] hover:opacity-95 text-white font-bold text-xs sm:text-[13px] px-4 sm:px-5 py-2.5 rounded-full flex items-center justify-center gap-2 shadow-sm transition-opacity">
+            <svg class="w-4 h-4 text-white shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+            <span>Tìm mẫu website phù hợp</span>
+          </button>
+
+          <!-- Middle: Input Field -->
+          <div class="relative flex-1 min-w-0">
+            <div
+              class="flex items-center bg-[#f8fafc] border border-slate-200/90 rounded-full px-3.5 sm:px-4 py-1.5 focus-within:border-[#ee6624] focus-within:ring-2 focus-within:ring-[#ee6624]/20 focus-within:bg-white transition-all shadow-inner">
+              <svg class="w-4 h-4 text-slate-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="text" id="searchInput"
+                placeholder="Nhập nhu cầu làm website (VD: Bán mỹ phẩm, Đặt vé xe, Web công ty, 300 sản phẩm...)"
+                class="w-full min-w-0 bg-transparent text-[11.5px] sm:text-xs text-slate-800 placeholder-slate-400 focus:outline-none px-2 py-1 font-normal"
+                oninput="handleSearch()" onfocus="showAutocomplete()" />
+            </div>
+
+            <!-- Autocomplete Suggestions Dropdown -->
+            <div id="searchSuggestions"
+              class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white rounded-2xl shadow-xl border border-slate-100 p-2 z-40">
+              <div class="text-[10px] font-bold text-slate-400 px-3 py-1 uppercase tracking-wider">Gợi ý tìm kiếm phổ
+                biến</div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1">
+                <button onclick="pickSuggestion('Bán mỹ phẩm')"
+                  class="text-left px-2.5 py-1.5 text-xs text-slate-700 hover:bg-slate-50 rounded-lg flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#ee6624]"></span> Bán mỹ phẩm
+                </button>
+                <button onclick="pickSuggestion('Web công ty')"
+                  class="text-left px-2.5 py-1.5 text-xs text-slate-700 hover:bg-slate-50 rounded-lg flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#e32227]"></span> Web công ty
+                </button>
+                <button onclick="pickSuggestion('Đặt vé & Tour du lịch')"
+                  class="text-left px-2.5 py-1.5 text-xs text-slate-700 hover:bg-slate-50 rounded-lg flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#ee6624]"></span> Đặt vé & Tour
+                </button>
+                <button onclick="pickSuggestion('Hệ thống CRM & AI')"
+                  class="text-left px-2.5 py-1.5 text-xs text-slate-700 hover:bg-slate-50 rounded-lg flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#e32227]"></span> Hệ thống CRM & AI
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Button: Tìm nhanh -->
+          <button onclick="handleSearchClick()"
+            class="shrink-0 bg-gradient-to-r from-[#ee6624] to-[#e32227] hover:opacity-95 active:scale-95 text-white font-bold text-xs sm:text-[13px] px-5 sm:px-6 py-2.5 rounded-full flex items-center justify-center gap-1.5 shadow-md shadow-[#ee6624]/25 transition-all">
+            <span>Tìm nhanh</span>
+            <span class="text-base leading-none">→</span>
+          </button>
+
+        </div>
+
+        <!-- Row 2: Ngân sách tham khảo & Lọc/Tùy chọn -->
+        <div class="flex items-center justify-between gap-2 pt-1">
+          <div class="text-[12px] font-bold text-slate-800">Ngân sách tham khảo:</div>
+          <!-- Vertical Divider & Right Filter Dropdown Button -->
+          <div class="flex shrink-0 items-center gap-2.5">
+            <div class="relative">
+              <button id="filterDropdownBtn" type="button" onclick="toggleFilterMenu()" aria-expanded="false" aria-controls="filterMenu"
+                class="bg-white hover:bg-slate-50 border border-slate-200/90 rounded-full px-3.5 py-1.5 shadow-sm text-[11.5px] sm:text-xs font-bold text-slate-700 flex items-center gap-1.5 cursor-pointer transition-all hover:border-slate-300 active:scale-95">
+                <svg class="w-3.5 h-3.5 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                </svg>
+                <span>Lọc / Tùy chọn</span>
+                <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-1 text-xs">
+
+          <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2 sm:gap-2.5 lg:flex-nowrap">
+            <!-- Price Pill 1 -->
+            <button type="button" onclick="filterByPrice('1-2.5')" data-price="1-2.5" aria-pressed="false"
+              class="price-filter min-w-[170px] flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left transition-all hover:border-[#ee6624] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ee6624]">
+              <span class="flex items-center gap-1.5 whitespace-nowrap"><span class="rounded bg-emerald-100 px-1.5 py-0.5 text-[11px] font-bold text-emerald-700">Ít</span><span class="text-xs font-bold text-slate-800">1 – 2,5 triệu</span></span>
+              <span class="mt-1 block text-xs leading-snug text-slate-600 [text-wrap:pretty]"><span class="whitespace-nowrap font-bold text-[#e32227]">ZERO 1 → ZERO 2</span> · Khởi đầu, <span class="whitespace-nowrap">bán lẻ nhỏ</span></span>
+            </button>
+
+            <!-- Price Pill 2 -->
+            <button type="button" onclick="filterByPrice('3-6')" data-price="3-6" aria-pressed="false"
+              class="price-filter min-w-[170px] flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left transition-all hover:border-[#ee6624] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ee6624]">
+              <span class="flex items-center gap-1.5 whitespace-nowrap"><span class="rounded bg-blue-100 px-1.5 py-0.5 text-[11px] font-bold text-blue-700">Trung Bình</span><span class="text-xs font-bold text-slate-800">3 – 6 triệu</span></span>
+              <span class="mt-1 block text-xs leading-snug text-slate-600 [text-wrap:pretty]"><span class="whitespace-nowrap font-bold text-[#e32227]">ZERO 3 → ZERO 8</span> · Giới thiệu đến <span class="whitespace-nowrap">trọn gói</span></span>
+            </button>
+
+            <!-- Price Pill 3 -->
+            <button type="button" onclick="filterByPrice('7-13')" data-price="7-13" aria-pressed="false"
+              class="price-filter min-w-[170px] flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left transition-all hover:border-[#ee6624] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ee6624]">
+              <span class="flex items-center gap-1.5 whitespace-nowrap"><span class="rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-800">Nhiều</span><span class="text-xs font-bold text-slate-800">7 – 13 triệu</span></span>
+              <span class="mt-1 block text-xs leading-snug text-slate-600 [text-wrap:pretty]"><span class="whitespace-nowrap font-bold text-[#e32227]">HERO 1 → HERO 4</span> · Thương hiệu và <span class="whitespace-nowrap">tăng trưởng</span></span>
+            </button>
+
+            <!-- Price Pill 4 -->
+            <button type="button" onclick="filterByPrice('15-60')" data-price="15-60" aria-pressed="false"
+              class="price-filter min-w-[170px] flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-left transition-all hover:border-[#ee6624] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ee6624]">
+              <span class="flex items-center gap-1.5 whitespace-nowrap"><span class="rounded bg-red-100 px-1.5 py-0.5 text-[11px] font-bold text-red-700">Cao</span><span class="text-xs font-bold text-slate-800">15 – 60 triệu+</span></span>
+              <span class="mt-1 block text-xs leading-snug text-slate-600 [text-wrap:pretty]"><span class="whitespace-nowrap font-bold text-[#e32227]">HERO 5 → HERO 8</span> · Hệ thống và giải pháp <span class="whitespace-nowrap">toàn diện</span></span>
+            </button>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <div id="filterMenu" class="hidden mt-3 rounded-2xl border border-slate-200 bg-slate-100 p-3">
+        <div class="flex items-center justify-between gap-3 border-b border-slate-100 pb-2">
+          <p class="text-xs font-semibold text-slate-600">B&#7845;m v&#224;o g&#243;i b&#7845;t k&#7923; &#273;&#7875; xem t&#243;m t&#7855;t nhanh &amp; t&#249;y ch&#7885;n g&#243;i</p>
+          <button type="button" onclick="toggleFilterMenu()" class="shrink-0 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-200">Thu g&#7885;n &#10005;</button>
+        </div>
+        <div id="filterGroups" class="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+
+      <!-- ================= 8 PACKAGE CARDS CAROUSEL ================= -->
+      <div id="cardsCarousel" class="relative pt-3">
+
+        <!-- Left Carousel Arrow -->
+        <button id="scrollLeftBtn" onclick="scrollCarousel(-1)" aria-label="Cuộn sang trái"
+          class="absolute -left-2.5 sm:-left-3.5 top-1/2 mt-1 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-400 hover:text-[#e32227] hover:border-[#ee6624] hover:scale-105 active:scale-95 transition-all">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Carousel Track with 8 Cards -->
+        <div id="cardsTrack" class="no-scrollbar flex items-stretch gap-2 overflow-x-auto scroll-smooth px-0.5 py-1">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Right Carousel Arrow -->
+        <button id="scrollRightBtn" onclick="scrollCarousel(1)" aria-label="Cuộn sang phải"
+          class="absolute -right-2.5 sm:-right-3.5 top-1/2 mt-1 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-400 hover:text-[#e32227] hover:border-[#ee6624] hover:scale-105 active:scale-95 transition-all">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= SECTION: QUY TRÌNH TRIỂN KHAI 4 BƯỚC CHUẨN ================= -->
+  <section class="max-w-[1240px] xl:max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <div
+        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#c4181c] text-xs font-semibold mb-2">
+        <span>Quy trình Matbao WS</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-[#292524] tracking-tight">
+        4 Bước triển khai Website thần tốc & chuẩn xác
+      </h2>
+      <p class="text-slate-500 text-xs sm:text-sm mt-1">
+        Từ ý tưởng đến vận hành thực chiến chỉ từ 3 đến 7 ngày làm việc.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <!-- Step 1 -->
+      <div
+        class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="text-4xl font-black text-slate-100 absolute -right-2 -bottom-2 pointer-events-none">01</div>
+        <div class="w-10 h-10 rounded-xl bg-white text-[#e32227] flex items-center justify-center font-bold mb-3">
+          1
+        </div>
+        <h3 class="font-extrabold text-sm text-slate-900 mb-1">Khảo sát & Tư vấn</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Đội ngũ chuyên gia phân tích mục tiêu kinh doanh, đề xuất gói giải pháp tối ưu chi phí và tính năng.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div
+        class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="text-4xl font-black text-slate-100 absolute -right-2 -bottom-2 pointer-events-none">02</div>
+        <div class="w-10 h-10 rounded-xl bg-white text-[#ee6624] flex items-center justify-center font-bold mb-3">
+          2
+        </div>
+        <h3 class="font-extrabold text-sm text-slate-900 mb-1">Thiết kế UI/UX</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Xây dựng giao diện thương hiệu độc quyền, chuẩn Responsive tương thích 100% Mobile và Tablet.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div
+        class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="text-4xl font-black text-slate-100 absolute -right-2 -bottom-2 pointer-events-none">03</div>
+        <div class="w-10 h-10 rounded-xl bg-white text-[#e32227] flex items-center justify-center font-bold mb-3">
+          3
+        </div>
+        <h3 class="font-extrabold text-sm text-slate-900 mb-1">Lập trình & Tích hợp</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Tối ưu mã nguồn sạch, cài đặt SSL bảo mật, cấu hình cổng thanh toán, CRM và chuẩn hóa cấu trúc SEO.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div
+        class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="text-4xl font-black text-slate-100 absolute -right-2 -bottom-2 pointer-events-none">04</div>
+        <div
+          class="w-10 h-10 rounded-xl bg-white text-[#ee6624] flex items-center justify-center font-bold mb-3">
+          4
+        </div>
+        <h3 class="font-extrabold text-sm text-slate-900 mb-1">Bàn giao & Đồng hành</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Hướng dẫn quản trị chi tiết, hỗ trợ kỹ thuật 24/7 và cam kết duy trì hệ thống hoạt động ổn định 99.9%.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CAM KẾT CHẤT LƯỢNG ================= -->
+  <section class="bg-white border-y border-slate-100 py-12">
+    <div class="max-w-[1240px] xl:max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl sm:text-3xl font-black text-[#e32227]">20+</div>
+          <div class="text-xs font-semibold text-slate-700 mt-1">Năm kinh nghiệm</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Tiên phong hạ tầng Web & Cloud</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-black text-[#22c55e]">50.000+</div>
+          <div class="text-xs font-semibold text-slate-700 mt-1">Khách hàng tin chọn</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Doanh nghiệp trên toàn quốc</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-black text-[#ee6624]">99.9%</div>
+          <div class="text-xs font-semibold text-slate-700 mt-1">Uptime cam kết</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Hạ tầng máy chủ tiêu chuẩn quốc tế</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-black text-[#8b5cf6]">24/7/365</div>
+          <div class="text-xs font-semibold text-slate-700 mt-1">Hỗ trợ kỹ thuật</div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Đội ngũ kỹ sư trực sẵn sàng</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER (assets: assets/images/matbao_footer_assets_png) ================= -->
+  <footer id="about" class="relative overflow-hidden bg-[#fffafa] text-stone-600">
+    <!-- decorative layers -->
+    <img src="assets/images/matbao_footer_assets_png/footer-lines-top-right.png" alt="" aria-hidden="true"
+      class="pointer-events-none select-none absolute top-0 right-0 w-[45%] max-w-[630px] opacity-80">
+    <img src="assets/images/matbao_footer_assets_png/footer-wave-bottom.png" alt="" aria-hidden="true"
+      class="pointer-events-none select-none absolute bottom-0 left-0 hidden md:block w-full h-[230px] lg:h-[260px] object-cover object-bottom">
+    <img src="assets/images/matbao_footer_assets_png/footer-wave-mobile.png" alt="" aria-hidden="true"
+      class="pointer-events-none select-none absolute bottom-0 left-0 md:hidden w-full h-[420px] object-cover object-top">
+    <img src="assets/images/matbao_footer_assets_png/footer-lines-bottom-right.png" alt="" aria-hidden="true"
+      class="pointer-events-none select-none absolute bottom-[150px] right-0 hidden lg:block w-[36%] max-w-[690px] opacity-60">
+
+    <div class="relative z-10 max-w-[1240px] xl:max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 lg:pt-16">
+
+      <!-- Main columns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-[1.35fr_1fr_1.05fr_.85fr_1.2fr] gap-x-8 xl:gap-x-0 gap-y-10 xl:gap-y-0">
+
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-4 xl:col-span-1 xl:pr-8 xl:border-r xl:border-stone-200">
+          <img src="assets/images/brands/logo-matbao-ws.png" alt="MATBAO WS" class="h-[64px] w-auto object-contain -ml-1">
+          <h3 class="mt-5 max-w-[320px] text-[18px] xl:text-[17px] 2xl:text-[19px] leading-snug font-bold text-stone-900"><span class="xl:whitespace-nowrap">Nền tảng Website chuyên nghiệp</span> cho doanh nghiệp Việt</h3>
+          <p class="mt-3 max-w-[340px] font-secondary text-[13.5px] leading-relaxed text-stone-500">
+            Giải pháp thiết kế, triển khai, vận hành và chăm sóc Website toàn diện, giúp doanh nghiệp tăng nhận diện và phát triển bền vững trên nền tảng số.
+          </p>
+          <a href="https://isocert.org.vn/cong-ty-co-phan-mat-bao-ws" target="_blank" rel="noopener" class="inline-block mt-5 rounded-full shadow-[0_8px_22px_-12px_rgba(120,53,15,.35)] hover:-translate-y-0.5 transition-transform">
+            <span class="flex items-center gap-3 px-3 py-2 rounded-full bg-white border border-stone-100">
+              <img src="assets/images/brands/iso-9001-2015.svg" alt="Chứng chỉ ISO 9001:2015" class="w-12 h-12 shrink-0 object-contain">
+              <span class="flex flex-col items-start justify-center gap-0.5 pr-2 leading-tight">
+                <span class="block text-[16px] font-bold text-[#0b2d59]">ISO 9001:2015</span>
+                <span class="block whitespace-nowrap text-[13px] font-semibold text-[#059669]">Đã xác nhận chính thức ✓</span>
+              </span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Giải pháp & Dịch vụ -->
+        <div class="xl:pl-10">
+          <h4 class="text-[17px] font-bold text-stone-900">Giải pháp &amp; Dịch vụ</h4>
+          <span class="block w-8 h-[3px] mt-2 mb-6 rounded-full bg-gradient-to-r from-[#e32227] to-[#ee6624]"></span>
+          <ul class="space-y-3">
+            <li><a href="#" class="group flex items-center gap-3.5 whitespace-nowrap text-[15px] text-stone-700 hover:text-[#e32227] transition-colors"><img src="assets/images/matbao_footer_assets_png/icon-website.png" alt="" class="w-9 h-9 transition-transform group-hover:scale-110">Thiết kế Website</a></li>
+            <li><a href="https://www.matbao.ws/web-hero/mau-website" class="group flex items-center gap-3.5 whitespace-nowrap text-[15px] text-stone-700 hover:text-[#e32227] transition-colors"><img src="assets/images/matbao_footer_assets_png/icon-templates.png" alt="" class="w-9 h-9 transition-transform group-hover:scale-110">Mẫu Website</a></li>
+            <li><a href="https://www.matbao.ws/web-care" class="group flex items-center gap-3.5 whitespace-nowrap text-[15px] text-stone-700 hover:text-[#e32227] transition-colors"><img src="assets/images/matbao_footer_assets_png/icon-support.png" alt="" class="w-9 h-9 transition-transform group-hover:scale-110">Chăm sóc Website</a></li>
+            <li><a href="https://www.matbao.ws/audit-web" class="group flex items-center gap-3.5 whitespace-nowrap text-[15px] text-stone-700 hover:text-[#e32227] transition-colors"><img src="assets/images/matbao_footer_assets_png/icon-audit.png" alt="" class="w-9 h-9 transition-transform group-hover:scale-110">Audit Website</a></li>
+            <li><a href="#" class="group flex items-center gap-3.5 whitespace-nowrap text-[15px] text-stone-700 hover:text-[#e32227] transition-colors"><img src="assets/images/matbao_footer_assets_png/icon-services.png" alt="" class="w-9 h-9 transition-transform group-hover:scale-110">Dịch vụ Website</a></li>
+          </ul>
+        </div>
+
+        <!-- Hỗ trợ & Chính sách -->
+        <div class="xl:pl-6">
+          <h4 class="text-[17px] font-bold text-stone-900">Hỗ trợ &amp; Chính sách</h4>
+          <span class="block w-8 h-[3px] mt-2 mb-6 rounded-full bg-gradient-to-r from-[#e32227] to-[#ee6624]"></span>
+          <ul class="space-y-[18px] font-secondary text-[14.5px]">
+            <li><a href="https://www.matbao.ws/dieu-khoan-ve-ten-mien" class="hover:text-[#e32227] transition-colors">Điều khoản về tên miền</a></li>
+            <li><a href="https://www.matbao.ws/chinh-sach-bao-mat" class="hover:text-[#e32227] transition-colors">Chính sách bảo mật thông tin</a></li>
+            <li><a href="https://www.matbao.ws/quy-dinh-ve-ha-tang-va-luu-tru" class="hover:text-[#e32227] transition-colors">Quy định về hạ tầng và lưu trữ</a></li>
+            <li><a href="https://www.matbao.ws/ban-quyen-ma-nguon-website" class="hover:text-[#e32227] transition-colors">Bản quyền mã nguồn Website</a></li>
+            <li><a href="https://www.matbao.ws/cam-ket-3d" class="hover:text-[#e32227] transition-colors">Cam kết dịch vụ</a></li>
+            <li><a href="https://www.matbao.ws/quyen-loi-gia-han" class="hover:text-[#e32227] transition-colors">Quyền lợi Gia hạn</a></li>
+          </ul>
+        </div>
+
+        <!-- Về Mắt Bão WS -->
+        <div class="xl:pl-4 xl:pr-6 xl:border-r xl:border-stone-200">
+          <h4 class="text-[17px] font-bold text-stone-900">Về Mắt Bão WS</h4>
+          <span class="block w-8 h-[3px] mt-2 mb-6 rounded-full bg-gradient-to-r from-[#e32227] to-[#ee6624]"></span>
+          <ul class="space-y-[18px] font-secondary text-[14.5px]">
+            <li><a href="https://www.matbao.ws/about" class="hover:text-[#e32227] transition-colors">Giới thiệu doanh nghiệp</a></li>
+            <li><a href="https://www.matbao.ws/blogs" class="hover:text-[#e32227] transition-colors">Tin tức &amp; Blog</a></li>
+            <li><a href="https://www.matbao.ws/web-hero/lien-minh-hero" class="hover:text-[#e32227] transition-colors">Liên minh Hero</a></li>
+            <li><a href="https://www.matbao.ws/web-hero/truoc-khi-mua" class="hover:text-[#e32227] transition-colors">Trước khi mua</a></li>
+          </ul>
+        </div>
+
+        <!-- Văn phòng -->
+        <div class="sm:col-span-2 lg:col-span-1 xl:pl-10">
+          <h4 class="text-[17px] font-bold text-stone-900">Văn phòng</h4>
+          <span class="block w-8 h-[3px] mt-2 mb-6 rounded-full bg-gradient-to-r from-[#e32227] to-[#ee6624]"></span>
+          <div class="space-y-6">
+            <div class="flex gap-3.5">
+              <img src="assets/images/matbao_footer_assets_png/icon-location.png" alt="" class="w-9 h-9 shrink-0">
+              <div class="font-secondary text-[14px] leading-relaxed">
+                <p class="font-bold text-stone-900">TP. Hồ Chí Minh – Trụ sở chính</p>
+                <p class="text-stone-500">Tòa nhà AXYS – 54 Đường C1, Phường 13, Quận Tân Bình, TP. Hồ Chí Minh</p>
+                <a href="https://maps.google.com/?q=54+%C4%90%C6%B0%E1%BB%9Dng+C1+Ph%C6%B0%E1%BB%9Dng+13+T%C3%A2n+B%C3%ACnh+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" rel="noopener" class="inline-block mt-1 font-bold text-[#e32227] hover:underline underline-offset-2">Chỉ đường ↗</a>
+              </div>
+            </div>
+            <div class="flex gap-3.5">
+              <img src="assets/images/matbao_footer_assets_png/icon-location.png" alt="" class="w-9 h-9 shrink-0">
+              <div class="font-secondary text-[14px] leading-relaxed">
+                <p class="font-bold text-stone-900">Hà Nội – Văn phòng đại diện</p>
+                <p class="text-stone-500">Tầng 5, Tòa Rosary, 89 Lạc Long Quân, P.Tây Hồ, Hà Nội</p>
+                <a href="https://maps.google.com/?q=89+L%E1%BA%A1c+Long+Qu%C3%A2n+T%C3%A2y+H%E1%BB%93+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener" class="inline-block mt-1 font-bold text-[#e32227] hover:underline underline-offset-2">Chỉ đường ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ecosystem pill -->
+      <div class="mt-12 lg:mt-14 mx-auto max-w-[1180px] flex flex-col xl:flex-row items-center gap-6 xl:gap-0 px-6 xl:px-12 py-6 xl:py-5 rounded-[28px] xl:rounded-full bg-white/90 backdrop-blur border border-white shadow-[0_18px_40px_-22px_rgba(120,53,15,.35)]">
+        <div class="flex items-center gap-4 shrink-0">
+          <img src="assets/images/brands/logo-axys.png" alt="Tập đoàn AXYS" class="h-10 w-auto">
+          <span class="w-px h-9 bg-stone-300"></span>
+          <span class="text-[13px] font-bold uppercase tracking-[.14em] leading-tight text-stone-500">Hệ sinh thái<br>Tập đoàn AXYS</span>
+        </div>
+        <span class="hidden xl:block w-px h-10 mx-10 bg-stone-200"></span>
+        <div class="grid grid-cols-3 md:grid-cols-6 xl:flex xl:flex-1 items-center gap-x-4 gap-y-5 xl:gap-0 xl:divide-x xl:divide-stone-200 w-full">
+          <a href="https://matbao.net/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-matbao-corp.png" alt="MATBAO CORP" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+          <a href="https://ods.vn/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-ods.png" alt="ODS" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+          <a href="https://matbaobpo.com/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-matbao-bpo.png" alt="MATBAO BPO" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+          <a href="https://matbao.ws/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-matbao-ws.png" alt="MATBAO WS" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+          <a href="https://matbao.net/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-matbao-one.png" alt="MATBAO ONE" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+          <a href="https://matbaoinvoice.com/" target="_blank" rel="noopener" class="flex-1 grid place-items-center px-3 xl:px-5 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"><img src="assets/images/brands/logo-matbao-invoice.png" alt="MATBAO INVOICE" class="h-7 xl:h-[30px] max-w-full w-auto object-contain"></a>
+        </div>
+      </div>
+
+      <!-- Bottom bar (sits on the red wave) -->
+      <div class="flex flex-col md:flex-row items-center gap-5 md:gap-0 pt-52 md:pt-32 lg:pt-36 pb-6 text-white">
+        <span class="px-4 py-1.5 rounded-lg border border-white/80 text-[14px] font-bold tracking-wide">DMCA</span>
+        <span class="hidden md:block w-px h-9 mx-8 bg-white/40"></span>
+        <p class="font-secondary text-[13.5px] md:text-[12.5px] xl:text-[14.5px] text-center md:text-left text-white/95">© 2012 – 2026 Mắt Bão WS | Nền tảng Website chuyên nghiệp cho doanh nghiệp Việt.</p>
+        <div class="flex items-center gap-3 md:ml-auto">
+          <a href="https://www.facebook.com/matbao.wse" target="_blank" rel="noopener" aria-label="Facebook" class="hover:-translate-y-0.5 transition-transform"><img src="assets/images/matbao_footer_assets_png/icon-social-facebook.png" alt="" class="w-11 h-11"></a>
+          <a href="https://linkedin.com/company/matbao-ws" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:-translate-y-0.5 transition-transform"><img src="assets/images/matbao_footer_assets_png/icon-social-linkedin.png" alt="" class="w-11 h-11"></a>
+          <a href="https://youtube.com/@matbaows" target="_blank" rel="noopener" aria-label="YouTube" class="hover:-translate-y-0.5 transition-transform"><img src="assets/images/matbao_footer_assets_png/icon-social-youtube.png" alt="" class="w-11 h-11"></a>
+          <span class="w-px h-9 mx-5 lg:mx-8 bg-white/40"></span>
+          <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Lên đầu trang"
+            class="grid place-items-center w-12 h-12 rounded-full bg-white text-[#e32227] shadow-[0_10px_24px_-8px_rgba(0,0,0,.35)] hover:-translate-y-0.5 transition-transform">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING CONTACT BAR =================
+       < lg : bottom bar with 4 labelled buttons
+       lg–2xl : collapsed into one "Liên hệ" button at bottom-right, expands on hover / tap (focus)
+       ≥ 2xl : full vertical stack, label shown as hover tooltip -->
+  <aside aria-label="Liên hệ nhanh"
+    class="group/aside fixed z-40 inset-x-0 bottom-0 grid grid-cols-4 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-8px_24px_-12px_rgba(15,23,42,0.18)] pb-[env(safe-area-inset-bottom)]
+           lg:inset-x-auto lg:left-auto lg:right-4 lg:bottom-6 lg:flex lg:flex-col lg:gap-2.5 lg:bg-transparent lg:border-0 lg:shadow-none lg:backdrop-blur-none lg:pb-0">
+
+    <!-- Phone -->
+    <a href="tel:19001830" class="group relative flex flex-col items-center justify-center gap-1 py-2 lg:py-0 lg:max-2xl:hidden lg:max-2xl:group-hover/aside:flex lg:max-2xl:group-focus-within/aside:flex">
+      <span class="pulse-ring relative grid place-items-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-[#10b981] group-hover:bg-[#059669] text-white shadow-lg shadow-emerald-500/25 transition-all lg:group-hover:scale-110 group-active:scale-95">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span class="text-[10.5px] font-semibold text-slate-700 lg:absolute lg:right-full lg:top-1/2 lg:-translate-y-1/2 lg:mr-3 lg:px-2.5 lg:py-1 lg:rounded-md lg:bg-slate-900 lg:text-white lg:font-medium lg:whitespace-nowrap lg:shadow-md lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:transition-opacity">
+        <span class="lg:hidden">Gọi ngay</span><span class="hidden lg:inline">Hotline: 1900 1830</span>
+      </span>
+    </a>
+
+    <!-- Zalo -->
+    <a href="https://zalo.me" target="_blank" rel="noopener" class="group relative flex flex-col items-center justify-center gap-1 py-2 lg:py-0 lg:max-2xl:hidden lg:max-2xl:group-hover/aside:flex lg:max-2xl:group-focus-within/aside:flex">
+      <span class="grid place-items-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-[#0068ff] group-hover:bg-[#0052cc] text-white shadow-lg shadow-blue-500/25 transition-all lg:group-hover:scale-110 group-active:scale-95">
+        <span class="font-extrabold text-[9.5px] tracking-tight">Zalo</span>
+      </span>
+      <span class="text-[10.5px] font-semibold text-slate-700 lg:absolute lg:right-full lg:top-1/2 lg:-translate-y-1/2 lg:mr-3 lg:px-2.5 lg:py-1 lg:rounded-md lg:bg-slate-900 lg:text-white lg:font-medium lg:whitespace-nowrap lg:shadow-md lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:transition-opacity">
+        <span class="lg:hidden">Zalo</span><span class="hidden lg:inline">Chat qua Zalo</span>
+      </span>
+    </a>
+
+    <!-- Messenger -->
+    <a href="https://m.me" target="_blank" rel="noopener" class="group relative flex flex-col items-center justify-center gap-1 py-2 lg:py-0 lg:max-2xl:hidden lg:max-2xl:group-hover/aside:flex lg:max-2xl:group-focus-within/aside:flex">
+      <span class="grid place-items-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-gradient-to-tr from-[#0084ff] to-[#a033ff] text-white shadow-lg shadow-purple-500/25 transition-all lg:group-hover:scale-110 group-active:scale-95">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.91 1.455 5.516 3.736 7.185V22l3.418-1.875c.91.252 1.873.388 2.846.388 5.523 0 10-4.145 10-9.255C22 6.145 17.523 2 12 2zm1.002 12.443l-2.56-2.73-5 2.73 5.498-5.836 2.623 2.73 4.937-2.73-5.498 5.836z"/></svg>
+      </span>
+      <span class="text-[10.5px] font-semibold text-slate-700 lg:absolute lg:right-full lg:top-1/2 lg:-translate-y-1/2 lg:mr-3 lg:px-2.5 lg:py-1 lg:rounded-md lg:bg-slate-900 lg:text-white lg:font-medium lg:whitespace-nowrap lg:shadow-md lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:transition-opacity">
+        <span class="lg:hidden">Messenger</span><span class="hidden lg:inline">Chat Messenger</span>
+      </span>
+    </a>
+
+    <!-- Consult -->
+    <button type="button" onclick="openConsultModal()" class="group relative flex flex-col items-center justify-center gap-1 py-2 lg:py-0 lg:max-2xl:hidden lg:max-2xl:group-hover/aside:flex lg:max-2xl:group-focus-within/aside:flex">
+      <span class="grid place-items-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-[#e32227] to-[#ee6624] text-white shadow-lg shadow-[#ee6624]/30 transition-all lg:group-hover:scale-110 group-active:scale-95">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+      </span>
+      <span class="text-[10.5px] font-semibold text-slate-700 lg:absolute lg:right-full lg:top-1/2 lg:-translate-y-1/2 lg:mr-3 lg:px-2.5 lg:py-1 lg:rounded-md lg:bg-slate-900 lg:text-white lg:font-medium lg:whitespace-nowrap lg:shadow-md lg:opacity-0 lg:pointer-events-none lg:group-hover:opacity-100 lg:transition-opacity">
+        <span class="lg:hidden">Tư vấn</span><span class="hidden lg:inline">Tư vấn trực tiếp</span>
+      </span>
+    </button>
+
+    <!-- Collapsed toggle (lg–2xl only) -->
+    <button type="button" aria-label="Liên hệ"
+      class="hidden lg:max-2xl:grid place-items-center order-last w-12 h-12 rounded-full bg-gradient-to-br from-[#e32227] to-[#ee6624] text-white shadow-lg shadow-[#e32227]/30 transition-transform hover:scale-105">
+      <svg class="w-5 h-5 group-hover/aside:hidden group-focus-within/aside:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <svg class="w-5 h-5 hidden group-hover/aside:block group-focus-within/aside:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+  </aside>
+
+  <!-- ================= POPUP MODAL: CHI TIẾT GÓI & TƯ VẤN ================= -->
+  <div id="detailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div
+      class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 relative animate-gentle-float">
+
+      <!-- Close button -->
+      <button onclick="closeDetailModal()"
+        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Content Header -->
+      <div class="flex items-center gap-3 mb-4">
+        <div id="modalBadge" class="bg-[#e32227] text-white font-extrabold text-xs px-3 py-1 rounded-full">
+          HERO 1
+        </div>
+        <div>
+          <h3 id="modalTitle" class="font-black text-lg text-slate-900 leading-tight">CHUYÊN NGHIỆP</h3>
+          <p id="modalDesc" class="text-xs text-slate-500">Hệ thống tăng trưởng ổn định</p>
+        </div>
+      </div>
+
+      <!-- Price & Highlights -->
+      <div class="bg-slate-50 rounded-2xl p-4 mb-4 border border-slate-100">
+        <div class="flex items-baseline justify-between mb-2">
+          <span class="text-xs text-slate-500 font-medium">Chi phí dự kiến:</span>
+          <span id="modalPrice" class="text-lg font-black text-[#ee6624]">7.000.000đ – 13.000.000đ</span>
+        </div>
+        <div class="text-[11.5px] text-slate-600 space-y-1.5">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#ee6624] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Tặng Tên miền Quốc tế (.com/.net) + Hosting SSD 1 năm</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#ee6624] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Giao diện chuẩn UI/UX cao cấp, tương thích mọi thiết bị di động</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#ee6624] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>Chuẩn cấu trúc SEO Onpage giúp website nhanh lên Top Google</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Consultation Form -->
+      <form onsubmit="handleModalSubmit(event)" class="space-y-2.5">
+        <div>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Họ tên của bạn:</label>
+          <input required type="text" placeholder="Nguyễn Văn A"
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#e32227]">
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Số điện thoại nhận báo giá:</label>
+          <input required type="tel" placeholder="090x xxx xxx"
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-[#e32227]">
+        </div>
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-[#e32227] to-[#ee6624] hover:opacity-95 text-white font-bold text-xs py-2.5 rounded-xl shadow-lg shadow-[#ee6624]/25 transition-all mt-1">
+          Đăng ký tư vấn miễn phí ngay
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= POPUP MODAL: ĐĂNG NHẬP ================= -->
+  <div id="loginModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 relative">
+      <button onclick="closeLoginModal()"
+        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center">
+        ✕
+      </button>
+      <div class="text-center mb-5">
+        <img src="assets/images/logo.png" alt="MATBAO WS" class="h-8 mx-auto mb-2 object-contain">
+        <h3 class="font-bold text-base text-slate-900 mt-1">Đăng nhập tài khoản</h3>
+        <p class="text-xs text-slate-400">Quản trị dịch vụ Website & Hosting</p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Đăng nhập thành công!'); closeLoginModal();" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Email / Tên đăng nhập</label>
+          <input type="text" required placeholder="user@matbao.com"
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs">
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Mật khẩu</label>
+          <input type="password" required placeholder="••••••••"
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs">
+        </div>
+        <button type="submit"
+          class="w-full bg-[#e32227] hover:bg-[#c4181c] text-white font-bold text-xs py-2.5 rounded-xl transition-all">
+          Đăng nhập
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Detailed package definition
+    const packageData = {
+      hero: [
+        { code: 'HERO 1', title: 'CHUYÊN NGHIỆP', desc: 'Hệ thống tăng trưởng ổn định', price: '7.000.000đ – 13.000.000đ', gradient: 'from-[#ee6624] to-[#e32227]', iconColor: 'text-[#ee6624]', iconType: 'briefcase', category: '7-13' },
+        { code: 'HERO 2', title: 'THƯƠNG HIỆU', desc: 'Ưu tiên nhận diện & mở rộng', price: '8.000.000đ – 14.000.000đ', gradient: 'from-[#ee6624] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'tag', category: '7-13' },
+        { code: 'HERO 3', title: 'CÁ NHÂN HÓA', desc: 'Biến khách lý thành doanh số', price: '9.000.000đ – 15.000.000đ', gradient: 'from-[#ee6624] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'cart', category: '7-13' },
+        { code: 'HERO 4', title: 'QUAY LẠI', desc: 'Kéo khách quay lại và tăng giá trị', price: '10.000.000đ – 16.000.000đ', gradient: 'from-[#ee6624] to-[#e32227]', iconColor: 'text-[#e32227]', iconType: 'repeat', category: '7-13' },
+        { code: 'HERO 5', title: '+OMNI', desc: 'Đồng bộ đa kênh và quản lý tập trung', price: '15.000.000đ – 25.000.000đ', gradient: 'from-[#e32227] to-[#ee6624]', iconColor: 'text-[#e32227]', iconType: 'grid', category: '15-60' },
+        { code: 'HERO 6', title: 'AI & AUTO', desc: 'Tự động hóa vận hành – CSKH', price: '20.000.000đ – 35.000.000đ', gradient: 'from-[#e32227] to-[#e32227]', iconColor: 'text-[#e32227]', iconType: 'bot', category: '15-60' },
+        { code: 'HERO 7', title: 'QUỐC TẾ', desc: 'Khách hàng toàn cầu và đa ngôn ngữ', price: '25.000.000đ – 45.000.000đ', gradient: 'from-[#e32227] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'globe', category: '15-60' },
+        { code: 'HERO 8', title: 'CAO CẤP', desc: 'Giải pháp toàn diện cho doanh nghiệp lớn', price: '30.000.000đ – 60.000.000đ+', gradient: 'from-[#e32227] to-[#c4181c]', iconColor: 'text-[#ee6624]', iconType: 'crown', category: '15-60' }
+      ],
+      zero: [
+        { code: 'ZERO 1', title: 'KHỞI ĐẦU', desc: 'Giao diện mẫu cơ bản sẵn sàng', price: '1.200.000đ – 1.800.000đ', gradient: 'from-[#ee6624] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'tag', category: '1-2.5' },
+        { code: 'ZERO 2', title: 'KIẾN TẠO', desc: 'Bán hàng tinh gọn, đặt đơn nhanh', price: '1.900.000đ – 2.500.000đ', gradient: 'from-[#ee6624] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'cart', category: '1-2.5' },
+        { code: 'ZERO 3', title: 'BÁN LẺ', desc: 'Trang landing page công ty chuẩn', price: '3.000.000đ – 3.800.000đ', gradient: 'from-[#ee6624] to-[#ee6624]', iconColor: 'text-[#ee6624]', iconType: 'briefcase', category: '3-6' },
+        { code: 'ZERO 4', title: 'KHỞI NGHIỆP', desc: 'Form tư vấn & đặt lịch hẹn', price: '3.900.000đ – 4.500.000đ', gradient: 'from-[#ee6624] to-[#e32227]', iconColor: 'text-[#ee6624]', iconType: 'repeat', category: '3-6' },
+        { code: 'ZERO 5', title: 'SELLER', desc: 'Chia sẻ nội dung chuẩn SEO', price: '4.200.000đ – 5.000.000đ', gradient: 'from-[#e32227] to-[#e32227]', iconColor: 'text-[#e32227]', iconType: 'grid', category: '3-6' },
+        { code: 'ZERO 6', title: 'ĐA KÊNH', desc: 'Giải pháp tối ưu cho shop online', price: '4.800.000đ – 5.600.000đ', gradient: 'from-[#e32227] to-[#e32227]', iconColor: 'text-[#e32227]', iconType: 'bot', category: '3-6' },
+        { code: 'ZERO 7', title: 'LINH HOẠT', desc: 'Tùy biến module linh hoạt', price: '5.200.000đ – 5.900.000đ', gradient: 'from-[#e32227] to-[#e32227]', iconColor: 'text-[#e32227]', iconType: 'globe', category: '3-6' },
+        { code: 'ZERO 8', title: 'PHÁT TRIỂN', desc: 'Setup đầy đủ tên miền + hosting', price: '6.000.000đ', gradient: 'from-[#ee6624] to-[#c4181c]', iconColor: 'text-[#ee6624]', iconType: 'crown', category: '3-6' }
+      ]
+    };
+
+    let currentTab = 'hero';
+
+    function getSvgIcon(type) {
+      switch (type) {
+        case 'briefcase':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.5 6V4.5a2.25 2.25 0 0 1 2.25-2.25h4.5a2.25 2.25 0 0 1 2.25 2.25V6H20a2 2 0 0 1 2 2v10.5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.5zm3-1.5a.75.75 0 0 0-.75.75V6h4.5V5.25a.75.75 0 0 0-.75-.75h-3z" clip-rule="evenodd"/></svg>`;
+        case 'tag':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7 7a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-7-7a.75.75 0 0 1 0-1.06l7-7zm-4.47 7.53a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" clip-rule="evenodd"/></svg>`;
+        case 'cart':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h14.25a.75.75 0 0 0 0-1.5H5.163a2.25 2.25 0 0 1 2.11-1.5h9.477a3 3 0 0 0 2.87-2.115l1.658-5.799a1.5 1.5 0 0 0-1.442-1.911H6.18l-.517-1.942a1.875 1.875 0 0 0-1.81-1.391H2.25zM6.75 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm12 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>`;
+        case 'repeat':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`;
+        case 'grid':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></svg>`;
+        case 'bot':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 0 1 1 1v1.07A7.002 7.002 0 0 1 19 11v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-6a7.002 7.002 0 0 1 6-6.93V3a1 1 0 0 1 1-1zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM8 16a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H8z"/></svg>`;
+        case 'globe':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`;
+        case 'crown':
+          return `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>`;
+      }
+    }
+
+    function renderCards(list) {
+      const track = document.getElementById('cardsTrack');
+      const tierColors = {
+        '1-2.5': { header: 'bg-emerald-600', icon: 'text-emerald-600' },
+        '3-6': { header: 'bg-blue-600', icon: 'text-blue-600' },
+        '7-13': { header: 'bg-amber-600', icon: 'text-amber-600' },
+        '15-60': { header: 'bg-red-600', icon: 'text-red-600' }
+      };
+      track.innerHTML = list.map(item => `
+        <div class="package-card shrink-0 w-[calc((100%_-_8px)/2)] sm:w-[calc((100%_-_16px)/3)] lg:w-[calc((100%_-_32px)/5)] bg-white rounded-xl border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] overflow-hidden cursor-pointer flex flex-col justify-between" onclick="openPackageDetail('${item.code}')">
+          <div class="${tierColors[item.category].header} text-white font-extrabold text-[10px] py-0.5 text-center tracking-wide">
+            ${item.code}
+          </div>
+          <div class="p-2 text-center flex-1 flex flex-col items-center justify-center">
+            <div class="w-6 h-6 mb-1 flex items-center justify-center ${tierColors[item.category].icon}">
+              ${getSvgIcon(item.iconType)}
+            </div>
+            <h3 class="font-extrabold text-xs text-slate-900 leading-tight mb-1">${item.title}</h3>
+            <p class="text-xs text-slate-600 leading-snug">${item.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function switchTab(tab) {
+      currentTab = tab;
+      const tabZero = document.getElementById('tabZero');
+      const tabHero = document.getElementById('tabHero');
+
+      if (tabZero && tabHero) {
+        if (tab === 'zero') {
+          tabZero.className = "tab-btn px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 transition-all duration-200 bg-gradient-to-r from-[#ee6624] to-[#ee6624] text-white shadow-md shadow-[#ee6624]/25";
+          tabHero.className = "tab-btn px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 transition-all duration-200 text-slate-600 hover:text-slate-900";
+        } else {
+          tabHero.className = "tab-btn px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 transition-all duration-200 bg-gradient-to-r from-[#e32227] to-[#ee6624] text-white shadow-md shadow-[#ee6624]/25";
+          tabZero.className = "tab-btn px-4 sm:px-5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 transition-all duration-200 text-slate-600 hover:text-slate-900";
+        }
+      }
+      renderCards(packageData[currentTab]);
+    }
+
+    function scrollCarousel(direction) {
+      const track = document.getElementById('cardsTrack');
+      const scrollAmount = 240 * direction;
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    // Modal Details
+    function openPackageDetail(code) {
+      const all = [...packageData.hero, ...packageData.zero];
+      const pkg = all.find(p => p.code === code) || packageData.hero[0];
+
+      document.getElementById('modalBadge').innerText = pkg.code;
+      document.getElementById('modalTitle').innerText = pkg.title;
+      document.getElementById('modalDesc').innerText = pkg.desc;
+      document.getElementById('modalPrice').innerText = pkg.price;
+
+      document.getElementById('detailModal').classList.remove('hidden');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.add('hidden');
+    }
+
+    function openConsultModal() {
+      openPackageDetail('HERO 1');
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      alert('Đã gửi thông tin thành công! Chuyên viên Matbao WS sẽ gọi điện tư vấn chi tiết cho bạn ngay.');
+      closeDetailModal();
+    }
+
+    // Login Modal
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+    }
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+    }
+
+    // Live search
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const currentList = packageData[currentTab];
+      if (!query) {
+        renderCards(currentList);
+        return;
+      }
+      const filtered = currentList.filter(item =>
+        item.code.toLowerCase().includes(query) ||
+        item.title.toLowerCase().includes(query) ||
+        item.desc.toLowerCase().includes(query)
+      );
+      renderCards(filtered.length ? filtered : currentList);
+    }
+
+    function showAutocomplete() {
+      document.getElementById('searchSuggestions').classList.remove('hidden');
+    }
+
+    function pickSuggestion(text) {
+      const input = document.getElementById('searchInput');
+      input.value = text;
+      document.getElementById('searchSuggestions').classList.add('hidden');
+      handleSearch();
+    }
+
+    function handleSearchClick() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (query) {
+        openPackageDetail('HERO 1');
+      }
+    }
+
+    // Filter by price
+    function filterByPrice(range) {
+      document.querySelectorAll('.price-filter').forEach(button => {
+        const active = button.dataset.price === range;
+        button.setAttribute('aria-pressed', String(active));
+        button.classList.toggle('ring-2', active);
+        button.classList.toggle('ring-[#ee6624]', active);
+      });
+      if (range === '1-2.5' || range === '3-6') {
+        switchTab('zero');
+      } else {
+        switchTab('hero');
+      }
+      const list = packageData[currentTab].filter(i => i.category === range);
+      if (list.length) {
+        renderCards(list);
+      }
+    }
+
+    // Expand the package comparison panel.
+    function toggleFilterMenu() {
+      const panel = document.getElementById('filterMenu');
+      const opening = panel.classList.toggle('hidden') === false;
+      document.getElementById('filterDropdownBtn').setAttribute('aria-expanded', String(opening));
+      if (opening) renderFilterGroups();
+    }
+
+    function renderFilterGroups() {
+      const groups = [
+        { range: '1-2.5', label: 'M&#7913;C &#205;T', price: '1 &ndash; 2,5 tri&#7879;u', color: 'bg-emerald-100 text-emerald-700' },
+        { range: '3-6', label: 'TRUNG B&#204;NH', price: '3 &ndash; 6 tri&#7879;u', color: 'bg-blue-100 text-blue-700' },
+        { range: '7-13', label: 'M&#7912;C NHI&#7872;U', price: '7 &ndash; 13 tri&#7879;u', color: 'bg-amber-100 text-amber-800' },
+        { range: '15-60', label: 'M&#7912;C CAO', price: '15 &ndash; 60 tri&#7879;u+', color: 'bg-red-100 text-red-700' }
+      ];
+      const packages = [...packageData.zero, ...packageData.hero];
+      document.getElementById('filterGroups').innerHTML = groups.map(group => `
+        <div class="min-w-0 rounded-xl border border-slate-200 bg-slate-50 p-2">
+          <div class="flex items-center justify-between gap-2 border-b border-slate-200 pb-2">
+            <span class="rounded px-1.5 py-1 text-[10px] font-bold ${group.color}">${group.label}</span>
+            <span class="text-xs font-bold text-slate-800">${group.price}</span>
+          </div>
+          <div class="mt-2 space-y-1.5">
+            ${packages.filter(item => item.category === group.range).map(item => `
+              <button type="button" onclick="openPackageDetail('${item.code}')" class="flex w-full items-center gap-2 rounded-lg border border-slate-100 bg-white px-2 py-2 text-left hover:border-[#ee6624] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ee6624]">
+                <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold ${group.color}">${item.code}</span>
+                <span class="min-w-0 flex-1 text-[10px] font-bold text-slate-700">${item.title}</span>
+                <span class="shrink-0 rounded px-1.5 py-0.5 text-right text-[10px] font-semibold ${group.color}">${item.price}</span>
+              </button>`).join('')}
+          </div>
+        </div>`).join('');
+    }
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    function openMobileMenu() {
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      document.documentElement.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      document.documentElement.style.overflow = '';
+    }
+    mobileMenuToggle.addEventListener('click', openMobileMenu);
+    mobileMenu.querySelectorAll('[data-menu-close]').forEach((el) => el.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => { if (e.matches) closeMobileMenu(); });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      const searchInput = document.getElementById('searchInput');
+      const searchSuggestions = document.getElementById('searchSuggestions');
+      if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+        searchSuggestions.classList.add('hidden');
+      }
+    });
+
+    // Initialize cards on load
+    renderCards(packageData.hero);
+    const cardsTrack = document.getElementById('cardsTrack');
+    const cardsCarousel = document.getElementById('cardsCarousel');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let carouselPaused = false;
+    let lastCarouselInteraction = 0;
+    cardsCarousel.addEventListener('mouseenter', () => { carouselPaused = true; });
+    cardsCarousel.addEventListener('mouseleave', () => { carouselPaused = false; });
+    cardsCarousel.addEventListener('focusin', () => { carouselPaused = true; });
+    cardsCarousel.addEventListener('focusout', (event) => {
+      if (!cardsCarousel.contains(event.relatedTarget)) carouselPaused = false;
+    });
+    cardsCarousel.addEventListener('pointerdown', () => { lastCarouselInteraction = Date.now(); });
+    setInterval(() => {
+      const maxScroll = cardsTrack.scrollWidth - cardsTrack.clientWidth;
+      if (carouselPaused || document.hidden || reducedMotion.matches || maxScroll <= 1 || Date.now() - lastCarouselInteraction < 5000) return;
+      const next = cardsTrack.scrollLeft >= maxScroll - 1 ? 0 : Math.min(maxScroll, cardsTrack.scrollLeft + (cardsTrack.firstElementChild?.offsetWidth || 170) + 8);
+      cardsTrack.scrollTo({ left: next, behavior: 'smooth' });
+    }, 3000);
+  </script>
+
+  <!-- GSAP + Hero trailer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/hero-trailer.js"></script>
+  <script src="assets/js/hero-copy.js"></script>
+  <script src="assets/js/mega-menu.js"></script>
+</body>
+
+</html>
+
